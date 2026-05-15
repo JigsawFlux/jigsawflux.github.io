@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjigsawflux_blog=self.webpackChunkjigsawflux_blog||[]).push([[903],{1912:s=>{s.exports=JSON.parse('{"blogBasePath":"/blog/","blogTitle":"JigsawFlux Blog","authorsListPath":"/blog/authors"}')}}]);
