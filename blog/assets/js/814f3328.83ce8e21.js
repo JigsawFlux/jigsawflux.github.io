@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkjigsawflux_blog=self.webpackChunkjigsawflux_blog||[]).push([[472],{5513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome to the JigsawFlux Blog","permalink":"/blog/welcome","unlisted":false,"date":"2026-05-15T00:00:00.000Z"}]}')}}]);
