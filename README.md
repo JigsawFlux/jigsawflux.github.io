@@ -1,2 +1,2 @@
 # jigsawflux.github.io
-Official website for JigsawFlux - Open-source solutions for health, crisis management, and humanitarian causes
+Official website for JigsawFlux - Building tools that make a real difference for people around the world
