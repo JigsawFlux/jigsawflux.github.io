@@ -39,7 +39,9 @@ async function fetchReadme(name) {
     const res = await fetch(`${API_BASE}/repos/${GITHUB_ORG}/${name}/readme`);
     if (!res.ok) return null;
     const data = await res.json();
-    return data.content ? atob(data.content.replace(/\n/g, '')) : null;
+    if (!data.content) return null;
+    const bytes = Uint8Array.from(atob(data.content.replace(/\n/g, '')), c => c.charCodeAt(0));
+    return new TextDecoder('utf-8').decode(bytes);
 }
 
 // ─── Render hero ─────────────────────────────────────────────────────────────
