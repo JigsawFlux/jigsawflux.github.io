@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="All JigsawFlux open-source projects — health technology, crisis management, and humanitarian tools">
+    <title>Projects | JigsawFlux</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="../index.html" class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 2L4 16h8v12h8V16h8L16 2z" fill="currentColor"/>
+                    </svg>
+                    <span>JigsawFlux</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-active">Projects</a>
+                    <a href="../about.html">About</a>
+                    <a href="../contribute.html">Contribute</a>
+                    <a href="https://github.com/JigsawFlux" target="_blank" class="btn-primary">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1>Our Projects</h1>
+                <p>Open-source tools for health, crisis management, and humanitarian causes. All free, all public.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Listing -->
+    <section class="projects-page">
+        <div class="container">
+
+            <!-- Controls: search + filter -->
+            <div class="projects-controls">
+                <div class="search-wrapper">
+                    <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                    <input
+                        type="text"
+                        class="search-input"
+                        id="search-input"
+                        placeholder="Search projects…"
+                        aria-label="Search projects"
+                    >
+                </div>
+                <div class="filter-bar" id="filter-bar" role="group" aria-label="Filter by category">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="health-tech">Health</button>
+                    <button class="filter-btn" data-filter="crisis-management">Crisis</button>
+                    <button class="filter-btn" data-filter="humanitarian">Humanitarian</button>
+                </div>
+            </div>
+
+            <div class="projects-meta" id="projects-meta">
+                <span id="projects-count-label">Loading…</span>
+            </div>
+
+            <!-- Projects grid -->
+            <div class="projects-grid" id="projects-grid">
+                <div class="project-card placeholder">
+                    <div class="project-header"><h3>Loading…</h3></div>
+                    <p>Fetching repositories from GitHub…</p>
+                </div>
+            </div>
+
+            <!-- Empty state (hidden by default) -->
+            <div class="no-results" id="no-results" hidden>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="11" cy="11" r="8"/>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+                <p>No projects match your search.</p>
+                <button class="btn-secondary" id="clear-search">Clear filters</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>JigsawFlux</h4>
+                    <p>Open-source solutions for health, crisis management, and humanitarian causes.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigate</h4>
+                    <div class="footer-links">
+                        <a href="../index.html">Home</a>
+                        <a href="index.html">Projects</a>
+                        <a href="../about.html">About</a>
+                        <a href="../contribute.html">Contribute</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="footer-links">
+                        <a href="https://github.com/JigsawFlux" target="_blank">GitHub</a>
+                        <a href="https://github.com/orgs/JigsawFlux/repositories" target="_blank">All Repositories</a>
+                        <a href="https://github.com/JigsawFlux/.github" target="_blank">Contributing</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 JigsawFlux. All projects licensed under MIT or Apache 2.0.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/projects.js"></script>
+</body>
+</html>

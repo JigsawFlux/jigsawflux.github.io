@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JigsawFlux project details">
+    <title>Project | JigsawFlux</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="../index.html" class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 2L4 16h8v12h8V16h8L16 2z" fill="currentColor"/>
+                    </svg>
+                    <span>JigsawFlux</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-active">Projects</a>
+                    <a href="../about.html">About</a>
+                    <a href="../contribute.html">Contribute</a>
+                    <a href="https://github.com/JigsawFlux" target="_blank" class="btn-primary">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero (populated by JS) -->
+    <section class="proj-hero" id="proj-hero">
+        <div class="container">
+            <a href="index.html" class="proj-back">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"/>
+                </svg>
+                All projects
+            </a>
+            <div class="proj-hero-content" id="proj-hero-content">
+                <div class="proj-hero-skeleton">Loading…</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Detail -->
+    <section class="proj-detail">
+        <div class="container">
+            <div class="proj-detail-grid" id="proj-detail-grid">
+
+                <!-- README column -->
+                <article class="proj-main" id="proj-main">
+                    <div class="readme-loading">
+                        <p>Loading project details…</p>
+                    </div>
+                </article>
+
+                <!-- Sidebar -->
+                <aside class="proj-sidebar" id="proj-sidebar">
+                    <div class="sidebar-loading">
+                        <p>Loading…</p>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>JigsawFlux</h4>
+                    <p>Open-source solutions for health, crisis management, and humanitarian causes.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigate</h4>
+                    <div class="footer-links">
+                        <a href="../index.html">Home</a>
+                        <a href="index.html">Projects</a>
+                        <a href="../about.html">About</a>
+                        <a href="../contribute.html">Contribute</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="footer-links">
+                        <a href="https://github.com/JigsawFlux" target="_blank">GitHub</a>
+                        <a href="https://github.com/orgs/JigsawFlux/repositories" target="_blank">All Repositories</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 JigsawFlux. All projects licensed under MIT or Apache 2.0.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/project-detail.js"></script>
+</body>
+</html>
