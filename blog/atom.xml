@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://jigsawflux.org/blog/</id>
+    <title>JigsawFlux Blog</title>
+    <updated>2026-05-15T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://jigsawflux.org/blog/"/>
+    <subtitle>Updates from the JigsawFlux open-source community</subtitle>
+    <icon>https://jigsawflux.org/blog/img/favicon.ico</icon>
+    <rights>Copyright © 2026 JigsawFlux</rights>
+    <entry>
+        <title type="html"><![CDATA[Welcome to the JigsawFlux Blog]]></title>
+        <id>https://jigsawflux.org/blog/welcome</id>
+        <link href="https://jigsawflux.org/blog/welcome"/>
+        <updated>2026-05-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Welcome to the JigsawFlux Blog — a space for updates, ideas, and stories from the JigsawFlux open-source community.]]></summary>
+        <content type="html"><![CDATA[<p>Welcome to the JigsawFlux Blog — a space for updates, ideas, and stories from the JigsawFlux open-source community.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-jigsawflux">What is JigsawFlux?<a href="https://jigsawflux.org/blog/welcome#what-is-jigsawflux" class="hash-link" aria-label="Direct link to What is JigsawFlux?" title="Direct link to What is JigsawFlux?">​</a></h2>
+<p>JigsawFlux is an open-source organisation focused on building tools that make a real difference in health tech, crisis management, and humanitarian response. Every project we build is open, non-profit in spirit, and built to solve real problems that affect real people.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-this-blog-is-for">What this blog is for<a href="https://jigsawflux.org/blog/welcome#what-this-blog-is-for" class="hash-link" aria-label="Direct link to What this blog is for" title="Direct link to What this blog is for">​</a></h2>
+<p>This blog will be updated weekly or monthly with:</p>
+<ul>
+<li><strong>Project updates</strong> — what we're building, what's shipping, what's next</li>
+<li><strong>Technical deep-dives</strong> — architecture decisions, lessons learned, interesting engineering problems</li>
+<li><strong>Community stories</strong> — contributors, use cases, and the humans behind the code</li>
+<li><strong>Ideas and proposals</strong> — things we're thinking about, inviting input before we build</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="get-involved">Get involved<a href="https://jigsawflux.org/blog/welcome#get-involved" class="hash-link" aria-label="Direct link to Get involved" title="Direct link to Get involved">​</a></h2>
+<p>If you want to contribute — code, documentation, design, testing, or ideas — the best place to start is <a href="https://jigsawflux.org/contribute" target="_blank" rel="noopener noreferrer">jigsawflux.org/contribute</a>. Every bit helps.</p>
+<p>You can also follow along via the <a href="https://jigsawflux.org/blog/rss.xml">RSS feed</a> or the <a href="https://github.com/JigsawFlux" target="_blank" rel="noopener noreferrer">GitHub organisation</a>.</p>
+<p>Here's to building tools that matter.</p>]]></content>
+        <author>
+            <name>Suresh Thomas</name>
+            <uri>https://github.com/st185229</uri>
+        </author>
+        <category label="open-source" term="open-source"/>
+        <category label="health-tech" term="health-tech"/>
+        <category label="humanitarian" term="humanitarian"/>
+    </entry>
+</feed>

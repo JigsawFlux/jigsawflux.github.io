@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjigsawflux_blog=self.webpackChunkjigsawflux_blog||[]).push([[121],{8070:a=>{a.exports=JSON.parse('{"tags":[{"label":"open-source","permalink":"/blog/tags/open-source","count":1},{"label":"health-tech","permalink":"/blog/tags/health-tech","count":1},{"label":"humanitarian","permalink":"/blog/tags/humanitarian","count":1}]}')}}]);
