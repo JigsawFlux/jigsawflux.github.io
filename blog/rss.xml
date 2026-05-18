@@ -41,7 +41,7 @@
             <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[AI inference doesn't have to mean a cloud API call. This post walks through a spike I built to run a locally hosted language model through a clean, layered architecture using Ollama and the Model Context Protocol (MCP).]]></description>
             <content:encoded><![CDATA[<p>AI inference doesn't have to mean a cloud API call. This post walks through a spike I built to run a locally hosted language model through a clean, layered architecture using Ollama and the Model Context Protocol (MCP).</p>
-<p><em>The full source is on <a href="https://github.com/JigsawFlux/ollama-claude" target="_blank" rel="noopener noreferrer">GitHub</a>. Contributions and feedback welcome.</em></p>
+<p><em>The full source is on <a href="https://github.com/JigsawFlux/ollama-mcp-starter" target="_blank" rel="noopener noreferrer">GitHub</a>. Contributions and feedback welcome.</em></p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="why-local-llms">Why Local LLMs?<a href="https://jigsawflux.org/blog/local-llm-ollama-mcp-spike#why-local-llms" class="hash-link" aria-label="Direct link to Why Local LLMs?" title="Direct link to Why Local LLMs?">​</a></h2>
 <p>Most AI integrations today rely on external APIs — you send a prompt to a cloud provider, they run the model, you get a response. That works fine for many use cases, but it comes with real tradeoffs:</p>
 <ul>
@@ -147,7 +147,7 @@
 <li><strong>Docker packaging</strong> — containerising all three services would make deployment reproducible anywhere</li>
 </ul>
 <p>For JigsawFlux, the interesting application of this architecture is in tools for field teams and health workers — where data privacy matters, connectivity is unreliable, and a locally-running model on a shared device could provide genuine decision support.</p>
-<p>The full source is on <a href="https://github.com/JigsawFlux/ollama-claude" target="_blank" rel="noopener noreferrer">GitHub</a>. Contributions and feedback welcome.</p>]]></content:encoded>
+<p>The full source is on <a href="https://github.com/JigsawFlux/ollama-mcp-starter" target="_blank" rel="noopener noreferrer">GitHub</a>. Contributions and feedback welcome.</p>]]></content:encoded>
             <category>local-llm</category>
             <category>ollama</category>
             <category>mcp</category>
