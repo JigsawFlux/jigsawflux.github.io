@@ -137,7 +137,7 @@
 <p><img decoding="async" loading="lazy" alt="Demo screenshot" src="https://jigsawflux.org/blog/assets/images/demo-screenshot-635cbeab60411a800cc496f69275cd46.png" width="795" height="1185" class="img_ev3q"></p>
 <p>The chat tab lets you send prompts directly to the model. The health indicator in the header shows live status of the MCP and Ollama connections. If either goes down, the indicator updates and requests fail with a clear error message rather than a silent timeout.</p>
 <p>The below was the response from Microsoft Co-pilot</p>
-<p>![[copilot.png]]</p>
+<p><img decoding="async" loading="lazy" alt="Demo copilot" src="https://jigsawflux.org/blog/assets/images/copilot-538063f765f067c2f4433355ccc48299.png" width="823" height="1067" class="img_ev3q"></p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="whats-next">What's Next<a href="https://jigsawflux.org/blog/local-llm-ollama-mcp-spike#whats-next" class="hash-link" aria-label="Direct link to What's Next" title="Direct link to What's Next">​</a></h2>
 <p>This is a spike — a working proof of concept, not production software. The obvious next steps are:</p>
 <ul>
