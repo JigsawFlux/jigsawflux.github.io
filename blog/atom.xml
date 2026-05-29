@@ -13,7 +13,7 @@
         <id>https://jigsawflux.org/blog/local-llm-kubernetes-home-lab</id>
         <link href="https://jigsawflux.org/blog/local-llm-kubernetes-home-lab"/>
         <updated>2026-06-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[In Part 1 I ran Ollama directly on a Linux machine and wired it up through an MCP layer to a small web app. It worked. But bare-metal has friction — if the process crashes, it stays down. Adding Open-WebUI means managing another process. Resource limits are manual. There's no clean internal networking between services.]]></summary>
+        <summary type="html"><![CDATA[Part 2 of the local LLM series moves Ollama from bare-metal Linux into a MicroK8s cluster on an Intel NUC home lab server — covering StatefulSet deployment, Open-WebUI, MetalLB ingress, and the honest truth about running CPU-only inference on an AMD GPU machine.]]></summary>
         <content type="html"><![CDATA[<p>In <a href="https://jigsawflux.org/blog/local-llm-ollama-mcp-spike">Part 1</a> I ran Ollama directly on a Linux machine and wired it up through an MCP layer to a small web app. It worked. But bare-metal has friction — if the process crashes, it stays down. Adding Open-WebUI means managing another process. Resource limits are manual. There's no clean internal networking between services.</p>
 <p>This post moves the whole thing into Kubernetes. The goal isn't enterprise-grade infrastructure — it's a home lab setup that's reliable, easy to extend, and honest about its limitations.</p>
 <p><em>Manifests are in the <a href="https://github.com/JigsawFlux/ollama-mcp-starter" target="_blank" rel="noopener noreferrer"><code>ollama-mcp-starter</code></a> repo under <code>backend/k8s-deployment/</code>.</em></p>
