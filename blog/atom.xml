@@ -2,12 +2,103 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://jigsawflux.org/blog/</id>
     <title>JigsawFlux Blog</title>
-    <updated>2026-06-01T00:00:00.000Z</updated>
+    <updated>2026-06-11T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://jigsawflux.org/blog/"/>
     <subtitle>Updates from the JigsawFlux open-source community</subtitle>
     <icon>https://jigsawflux.org/blog/img/favicon.ico</icon>
     <rights>Copyright © 2026 JigsawFlux</rights>
+    <entry>
+        <title type="html"><![CDATA[Stop Burning AI Credits: A Framework for Right-Sizing Model Usage]]></title>
+        <id>https://jigsawflux.org/blog/ai-credits-optimization</id>
+        <link href="https://jigsawflux.org/blog/ai-credits-optimization"/>
+        <updated>2026-06-11T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[How enterprises can cut AI token waste with complexity-based model routing and a dual-gateway architecture.]]></summary>
+        <content type="html"><![CDATA[<p>Four months into 2026, Uber's AI budget was already gone. Thousands of engineers with un-gated access to Claude Code, bills running $500–$2,000 per person per month, and a CFO asking very loud questions about what exactly all those tokens were buying. Around the same time, an unnamed enterprise reportedly burned $500 million on Claude credits in a single month — not from a runaway model or a billing bug, but because nobody had thought to put a usage cap on employee licences.</p>
+<p>Neither story is about bad engineering. Both are about one broken default: when developers get unrestricted access to frontier models, they use frontier models for everything.</p>
+<p>I've been working through a framework to fix this — not by restricting access, but by routing the right task to the right model. The goal is frictionless development that doesn't quietly drain your budget. Here's how it works.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-shift-that-changed-everything">The shift that changed everything<a href="https://jigsawflux.org/blog/ai-credits-optimization#the-shift-that-changed-everything" class="hash-link" aria-label="Direct link to The shift that changed everything" title="Direct link to The shift that changed everything">​</a></h2>
+<p>Until early 2026, enterprise AI tooling largely ran on flat-rate subscriptions. You paid a seat fee, your team used whatever they needed, and costs were predictable. That model is gone. GitHub Copilot retired flat-rate allowances in favour of token-metered "AI Credits" on June 1, 2026. Every major provider has followed the same trajectory.</p>
+<p>The problem isn't the pricing model — it's that usage habits haven't caught up. Complex agentic tasks and heavy reasoning models consume tokens exponentially faster than simple completions. A developer running Claude Opus to autocomplete a for-loop is swinging a sledgehammer at a drawing pin. The pin goes in either way; the difference is what the swing cost.</p>
+<p>That's the sledgehammer problem, and it's the single largest source of AI budget waste: identical output, ten times the price.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="tier-your-workload">Tier your workload<a href="https://jigsawflux.org/blog/ai-credits-optimization#tier-your-workload" class="hash-link" aria-label="Direct link to Tier your workload" title="Direct link to Tier your workload">​</a></h2>
+<p>The fix is simpler than it sounds: match the model to the complexity of the task. Not every request needs deep reasoning. Not every request needs a lightweight model either. Three tiers cover almost everything.</p>
+<table><thead><tr><th style="text-align:left">Task Complexity</th><th style="text-align:left">Typical Use Cases</th><th style="text-align:left">Recommended Tier</th><th style="text-align:left">Cost Profile</th></tr></thead><tbody><tr><td style="text-align:left"><strong>Tier 1 — Simple &amp; Deterministic</strong></td><td style="text-align:left">Inline completion, boilerplate, unit tests, regex, Dockerfiles</td><td style="text-align:left">Efficient models (Haiku, GPT-4o-mini, Gemini Flash)</td><td style="text-align:left">📉 Lowest</td></tr><tr><td style="text-align:left"><strong>Tier 2 — Moderate &amp; Generative</strong></td><td style="text-align:left">Component logic, API endpoints, Mermaid diagram generation</td><td style="text-align:left">Balanced models (Sonnet, Gemini Pro)</td><td style="text-align:left">⚖️ Medium</td></tr><tr><td style="text-align:left"><strong>Tier 3 — Complex Reasoning</strong></td><td style="text-align:left">Architecture design, C++ memory debugging, large repo refactoring</td><td style="text-align:left">Frontier models (Opus, GPT-5, Gemini Ultra)</td><td style="text-align:left">📈 Highest</td></tr></tbody></table>
+<p>The goal isn't to ban frontier models — it's to use them where they actually earn their keep. A well-structured RAG pipeline or a cross-cutting refactor across a million-line codebase? That's a Tier 3 problem. A standard API endpoint in Go? It isn't.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="two-traffic-lanes-ide-vs-programmatic">Two traffic lanes: IDE vs programmatic<a href="https://jigsawflux.org/blog/ai-credits-optimization#two-traffic-lanes-ide-vs-programmatic" class="hash-link" aria-label="Direct link to Two traffic lanes: IDE vs programmatic" title="Direct link to Two traffic lanes: IDE vs programmatic">​</a></h2>
+<p>Tiering the workload is half the answer. The other half is routing enforcement — making sure models are actually selected based on task complexity rather than developer habit. The architecture I recommend splits AI traffic into two distinct lanes, each governed differently.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="lane-a-ide-traffic-via-github-copilot">Lane A: IDE traffic via GitHub Copilot<a href="https://jigsawflux.org/blog/ai-credits-optimization#lane-a-ide-traffic-via-github-copilot" class="hash-link" aria-label="Direct link to Lane A: IDE traffic via GitHub Copilot" title="Direct link to Lane A: IDE traffic via GitHub Copilot">​</a></h3>
+<p>Everyday inline coding and IDE chat stays within the GitHub Enterprise account. Governance happens through native Copilot policies: seat-based licensing, Targeted Model Rules, and usage caps. The key move is enforcing "Auto" mode as the default for standard users — it selects an appropriate model rather than defaulting to the most expensive one. Senior architects and principal engineers can be granted Tier 3 access for the work that justifies it.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="lane-b-programmatic-traffic-via-azure-apim">Lane B: Programmatic traffic via Azure APIM<a href="https://jigsawflux.org/blog/ai-credits-optimization#lane-b-programmatic-traffic-via-azure-apim" class="hash-link" aria-label="Direct link to Lane B: Programmatic traffic via Azure APIM" title="Direct link to Lane B: Programmatic traffic via Azure APIM">​</a></h3>
+<p>Custom scripts, CI/CD pipelines, and internal tools route through a single Azure API Management gateway. Rather than each team managing its own provider keys and burning Tier 3 credits by default, everything flows through a central control point that provides:</p>
+<ul>
+<li><strong>Identity-based access control</strong> via Entra ID</li>
+<li><strong>Semantic caching</strong> — identical prompts return cached responses at zero token cost</li>
+<li><strong>Intelligent routing</strong> across Azure AI Foundry and AWS Bedrock</li>
+<li><strong>Dollar-based budgets</strong> enforced per team or pipeline</li>
+</ul>
+<p>The caching point deserves emphasis. An automated pipeline making 50 near-identical classification requests doesn't need to pay for 50 model calls. It pays for one, caches the response, and the remaining 49 return instantly — the most straightforward cost reduction in the entire framework.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="architecture">Architecture<a href="https://jigsawflux.org/blog/ai-credits-optimization#architecture" class="hash-link" aria-label="Direct link to Architecture" title="Direct link to Architecture">​</a></h2>
+<!-- -->
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-this-looks-like-day-to-day">What this looks like day-to-day<a href="https://jigsawflux.org/blog/ai-credits-optimization#what-this-looks-like-day-to-day" class="hash-link" aria-label="Direct link to What this looks like day-to-day" title="Direct link to What this looks like day-to-day">​</a></h2>
+<p>Three scenarios that show the framework working in practice:</p>
+<p><strong>The developer writing .NET boilerplate in VS Code</strong> opens a file and starts typing. Copilot's Auto mode kicks in with a Tier 1 model — fast, cheap, accurate for the task. The developer never thinks about model selection, and the team's AI Credits aren't quietly being drained by Opus completions for standard controller logic.</p>
+<p><strong>The architect testing a RAG pipeline</strong> writes a Python script to benchmark embedding strategies. Instead of managing three different provider API keys, they authenticate once via Entra ID and send all calls through the APIM gateway. The gateway checks their team budget, routes to the appropriate tier, and logs everything. If their budget is close to the limit, a threshold alert fires — not a surprise invoice.</p>
+<p><strong>The data pipeline categorising code risk across 50 repositories</strong> runs nightly. The first repository's analysis is processed and cached. Repositories two through fifty hit the semantic cache and return at zero token cost. A task that would otherwise consume 50× the tokens costs the same as one.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="rolling-this-out">Rolling this out<a href="https://jigsawflux.org/blog/ai-credits-optimization#rolling-this-out" class="hash-link" aria-label="Direct link to Rolling this out" title="Direct link to Rolling this out">​</a></h2>
+<p>Three phases, and the order is deliberate:</p>
+<ol>
+<li><strong>Gateway first.</strong> Stand up Azure APIM and migrate all programmatic API calls to the unified endpoint. Establish identity-based routing and per-team budgets before anything else. You can't govern what you can't see.</li>
+<li><strong>IDE governance second.</strong> Once programmatic traffic is visible and controlled, implement GitHub Enterprise Targeted Model Rules. Restrict Tier 3 access to roles that genuinely need it; set Auto as the default for everyone else.</li>
+<li><strong>Team education last.</strong> Infrastructure changes enforce behaviour. Education reinforces it. Once the system is in place, rolling out guidelines on prompt scoping, context compression, and model selection across VS Code, Cursor, and Antigravity lands on a foundation that already supports the habits you're trying to build.</li>
+</ol>
+<p>The temptation is to start with education — it feels fast and low-risk. But guidelines without enforcement fade. Get the infrastructure right first.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-non-profit-dimension">The non-profit dimension<a href="https://jigsawflux.org/blog/ai-credits-optimization#the-non-profit-dimension" class="hash-link" aria-label="Direct link to The non-profit dimension" title="Direct link to The non-profit dimension">​</a></h2>
+<p>Everything above assumes an enterprise with a budget to optimise. But the same billing shock hits harder when you're running on grants, donations, or a volunteer-funded open-source project. Non-profits face a specific version of this problem: the same productivity pressure, the same tooling expectations from technical staff, and far less capacity to absorb a surprise $2,000-per-engineer monthly bill.</p>
+<p>The tiering framework still applies — but for cost-constrained organisations, there are additional levers worth considering beyond just routing between model tiers.</p>
+<p><strong>Local inference</strong> removes marginal token cost entirely. Tools like <a href="https://ollama.com/" target="_blank" rel="noopener noreferrer">Ollama</a> let you run open models (Llama, Mistral, Phi, Gemma) on local hardware or a small cloud VM — I've written about exactly this setup before, <a href="https://jigsawflux.org/blog/local-llm-kubernetes-home-lab">running Ollama on a Kubernetes home lab</a>. The per-query cost drops to near zero; you trade API fees for infrastructure and a ceiling on model capability. For Tier 1 tasks — boilerplate, unit tests, simple completions — a locally hosted 7B or 13B model is often indistinguishable in output quality from a cloud API call, at a fraction of the ongoing cost.</p>
+<p>Local hosting earns its keep in two situations beyond pure cost. The first is <strong>edge deployment</strong>: when inference needs to run on devices in the field — clinics with unreliable connectivity, crisis-response hardware, remote sensors — a cloud API isn't slow, it's unavailable. The second is subtler: for high-frequency, low-complexity workloads, the <strong>network round trip itself becomes a cost</strong>. Every cloud call pays latency and egress on top of the token price. A local model answering in tens of milliseconds, with no per-call fee, beats a cloud frontier model answering the same mundane question in two seconds — both on responsiveness and on the invoice.</p>
+<p><strong>Corporate cloud hosting</strong> sits between local inference and direct API access. Running models through AWS Bedrock or Azure AI Foundry — rather than calling Anthropic or Google directly — typically costs 20–40% less per token under enterprise agreements. More importantly for non-profits, it keeps data within a known compliance boundary, avoids egress fees from mixed-cloud setups, and makes budget governance easier through existing cloud billing tools. If your organisation is already on Azure or AWS, routing AI workloads through Foundry or Bedrock is often the fastest path to meaningful cost reduction without changing tooling.</p>
+<p>The decision tree for cost-constrained teams:</p>
+<ol>
+<li>Can a local model (Ollama + Llama/Mistral) handle this task acceptably? Use it.</li>
+<li>Is your org already on Azure or AWS? Route through Foundry or Bedrock first.</li>
+<li>Does the task genuinely need a frontier capability? Then pay for the direct API — but only then.</li>
+</ol>
+<p>The same tiering logic, extended one level further down.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="references">References<a href="https://jigsawflux.org/blog/ai-credits-optimization#references" class="hash-link" aria-label="Direct link to References" title="Direct link to References">​</a></h2>
+<ol>
+<li><em>Visual Studio Magazine</em>, "Copilot Billing Shock Hits Developers" (June 4, 2026)</li>
+<li><em>InfoWorld</em>, "GitHub shifts Copilot to usage-based billing" (April 28, 2026)</li>
+<li><em>Briefs Finance</em>, "Uber Torches Entire 2026 AI Budget on Claude Code in Four Months" (April 17, 2026)</li>
+<li><em>Inc. Magazine</em>, "1 Company Spent Half a Billion Dollars on Claude in a Single Month" (June 5, 2026)</li>
+<li><em>Tom's Hardware</em>, "Mystery company accidentally blew $500 million on Claude AI in a single month" (May 29, 2026)</li>
+</ol>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="appendix-how-this-post-was-written">Appendix: How this post was written<a href="https://jigsawflux.org/blog/ai-credits-optimization#appendix-how-this-post-was-written" class="hash-link" aria-label="Direct link to Appendix: How this post was written" title="Direct link to Appendix: How this post was written">​</a></h2>
+<p>This post was drafted and iterated entirely using Claude Code — which makes it a small live example of the tiering approach it describes. Three sessions, three different kinds of work, with measurably different token costs for each.</p>
+<p><strong>Session 1 — structural work (Sonnet + Haiku subagent)</strong></p>
+<p>The first session covered the heavy lifting: converting a raw strategy document into a structured blog post, rewriting from third-person enterprise-doc tone to first-person narrative, and setting up the publishing infrastructure (frontmatter, truncate markers, draft log).</p>
+<table><thead><tr><th style="text-align:left">Step</th><th style="text-align:left">Model</th><th style="text-align:left">Use case</th><th style="text-align:left">Cost</th></tr></thead><tbody><tr><td style="text-align:left">Iter 0</td><td style="text-align:left">claude-sonnet-4-6</td><td style="text-align:left">Frontmatter, CLAUDE.md setup, draft log scaffolding</td><td style="text-align:left">—</td></tr><tr><td style="text-align:left">Iter 1</td><td style="text-align:left">claude-sonnet-4-6</td><td style="text-align:left">Full structural rewrite — enterprise doc → first-person blog</td><td style="text-align:left">—</td></tr><tr><td style="text-align:left">Subagent</td><td style="text-align:left">claude-haiku-4-5</td><td style="text-align:left">Read-only codebase lookup (existing blog tone analysis)</td><td style="text-align:left">$0.02</td></tr><tr><td style="text-align:left"><strong>Session 1 total</strong></td><td style="text-align:left"></td><td style="text-align:left">1.5k input · 18k output · 1.6m cache read</td><td style="text-align:left"><strong>$1.30</strong></td></tr></tbody></table>
+<p><strong>Session 2 — prose and new sections (Sonnet)</strong></p>
+<p>The second session expanded the post: narrative restructuring, the non-profit section, and the first version of this appendix. Same model as Session 1, but cheaper — targeted edits on a stable structure produce far fewer output tokens than a full rewrite.</p>
+<table><thead><tr><th style="text-align:left">Step</th><th style="text-align:left">Model</th><th style="text-align:left">Use case</th><th style="text-align:left">Cost</th></tr></thead><tbody><tr><td style="text-align:left">Iter 2–3</td><td style="text-align:left">claude-sonnet-4-6</td><td style="text-align:left">Prose polish, non-profit section, appendix with real cost data</td><td style="text-align:left">—</td></tr><tr><td style="text-align:left"><strong>Session 2 total</strong></td><td style="text-align:left"></td><td style="text-align:left">0.7k input · 11.1k output · 1.0m cache read</td><td style="text-align:left"><strong>~$0.56</strong></td></tr></tbody></table>
+<p><strong>Session 3 — narrative pass (Fable 5)</strong></p>
+<p>The final session switched to <code>claude-fable-5</code>, Anthropic's narrative-optimised model, for a light editorial pass: metaphor consistency, sentence rhythm, and voice. The smallest change set of the three sessions — and, unexpectedly, the most expensive.</p>
+<table><thead><tr><th style="text-align:left">Step</th><th style="text-align:left">Model</th><th style="text-align:left">Use case</th><th style="text-align:left">Cost</th></tr></thead><tbody><tr><td style="text-align:left">Iter 4</td><td style="text-align:left">claude-fable-5</td><td style="text-align:left">Editorial polish — metaphor consistency, rhythm, voice</td><td style="text-align:left">$2.25</td></tr><tr><td style="text-align:left"><strong>Session 3 total</strong></td><td style="text-align:left"></td><td style="text-align:left">645 input · 5.1k output</td><td style="text-align:left"><strong>$2.25</strong></td></tr></tbody></table>
+<p>Look at the numbers side by side. Sonnet generated 31.4k output tokens across two sessions of structural and prose work for $2.01. Fable generated 5.1k tokens — a sixth of the volume — for $2.25. The lightest session cost the most, because premium per-token pricing dominated token count entirely.</p>
+<p>That accidental result is a cleaner demonstration of this post's thesis than anything I planned: <strong>model choice drives cost more than workload size does.</strong> Whether the premium model was worth it for an editorial pass is exactly the kind of question the tiering framework exists to force. Total across all three sessions: <strong>$4.28</strong>.</p>
+<p><em>Full token breakdown: <code>_DRAFT_LOG.md</code> in this post's directory.</em></p>]]></content>
+        <author>
+            <name>Suresh Thomas</name>
+            <uri>https://github.com/st185229</uri>
+        </author>
+        <category label="ai-credits" term="ai-credits"/>
+        <category label="github-copilot" term="github-copilot"/>
+        <category label="azure" term="azure"/>
+        <category label="cost-optimization" term="cost-optimization"/>
+        <category label="enterprise" term="enterprise"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Running a Local LLM on Kubernetes — A Home Lab Setup]]></title>
         <id>https://jigsawflux.org/blog/local-llm-kubernetes-home-lab</id>
