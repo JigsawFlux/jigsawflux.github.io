@@ -57,7 +57,7 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="demo-walkthrough">Demo Walkthrough<a href="https://jigsawflux.org/blog/agent-clinic#demo-walkthrough" class="hash-link" aria-label="Direct link to Demo Walkthrough" title="Direct link to Demo Walkthrough">​</a></h2>
 <p>Here's a complete consultation using Patient P001 (Alice Thompson, headache and fever).</p>
 <p><strong>1. Login — role and PIN selection</strong></p>
-<p><img decoding="async" loading="lazy" alt="Login screen" src="https://jigsawflux.org/blog/assets/images/login-fff2603301f9bb68e4126ec71ee99931.jpg" width="676" height="909" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Login screen" src="https://jigsawflux.org/blog/assets/images/login-9330e527640c39be6d15557f48759e9b.jpg" width="676" height="877" class="img_ev3q"></p>
 <p>The login screen is a placeholder for Amazon Cognito. The hardcoded PIN (<code>1234</code> for patients, <code>doctor</code> for doctors) illustrates exactly where real authentication would plug in — the rest of the graph doesn't change.</p>
 <p><strong>2. Patient submits symptoms — AI intake runs</strong></p>
 <p>The patient types their symptoms and clicks <strong>Start Consultation</strong>. The intake agent fetches the patient's record and medical history from SQLite, searches the knowledge base, assigns a triage score (1–5), and hands off to the doctor queue. The entire intake takes a few seconds.</p>
