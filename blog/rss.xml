@@ -10,7 +10,7 @@
         <language>en</language>
         <copyright>Copyright © 2026 JigsawFlux</copyright>
         <item>
-            <title><![CDATA[LangGraph, CrewAI, and AutoGen: A Side-by-Side Comparison for Claude Agents]]></title>
+            <title><![CDATA[Picking an Open-Source Agent Framework: LangGraph, CrewAI, and AutoGen]]></title>
             <link>https://jigsawflux.org/blog/comparing-agent-frameworks</link>
             <guid>https://jigsawflux.org/blog/comparing-agent-frameworks</guid>
             <pubDate>Sun, 28 Jun 2026 00:00:00 GMT</pubDate>
@@ -613,7 +613,7 @@ Featuring <strong>Claude™</strong>, <strong>GitHub Copilot™</strong>, and <s
 <p>Upload code + diagrams to Claude (Projects) or Gemini/Antigravity (1M context, parallel agents). Get architecture narrative and concern flags.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="2️⃣-design">2️⃣ Design<a href="https://jigsawflux.org/blog/ai-for-architects-beyond-code#2%EF%B8%8F%E2%83%A3-design" class="hash-link" aria-label="Direct link to 2️⃣ Design" title="Direct link to 2️⃣ Design">​</a></h3>
 <p>Generate options + ADRs with Claude. Scaffold IaC with Copilot Agent. Cross-reference diagrams in Gemini.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3️⃣-build">3️⃣ Build<a href="https://jigsawflux.org/blog/ai-for-architects-beyond-code#3%EF%B8%8F%E2%83%A3-build" class="hash-link" aria-label="Direct link to 3️�⃣ Build" title="Direct link to 3️⃣ Build">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3️⃣-build">3️⃣ Build<a href="https://jigsawflux.org/blog/ai-for-architects-beyond-code#3%EF%B8%8F%E2%83%A3-build" class="hash-link" aria-label="Direct link to 3️⃣ Build" title="Direct link to 3️⃣ Build">​</a></h3>
 <p>Assign issues to Copilot Coding Agent. Use Claude Code for terminal-based builds. Antigravity: parallel agents for multi-task builds.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="4️⃣-validate">4️⃣ Validate<a href="https://jigsawflux.org/blog/ai-for-architects-beyond-code#4%EF%B8%8F%E2%83%A3-validate" class="hash-link" aria-label="Direct link to 4️⃣ Validate" title="Direct link to 4️⃣ Validate">​</a></h3>
 <p>Copilot auto-scans for security. Claude generates threat models. Gemini reviews PRs. All before human review.</p>
