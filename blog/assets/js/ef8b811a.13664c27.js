@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjigsawflux_blog=self.webpackChunkjigsawflux_blog||[]).push([[8947],{6600:s=>{s.exports=JSON.parse('{"authors":[{"name":"Suresh Thomas","title":"Founder, JigsawFlux","url":"https://github.com/st185229","imageURL":"https://github.com/st185229.png","key":"suresh","page":null,"count":13}]}')}}]);
